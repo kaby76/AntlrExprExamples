@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "antlr": {
+      "commandName": "Project",
+      "commandLineArgs": "E6.g4",
+      "workingDirectory": "C:\\Users\\kenne\\Documents\\expr"
+    }
+  }
+}

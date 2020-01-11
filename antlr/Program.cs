@@ -13,7 +13,7 @@ namespace antlr
             var lexer = new ANTLRv4Lexer(str);
             var tokens = new CommonTokenStream(lexer);
             var parser = new ANTLRv4Parser(tokens);
-            var listener = new ErrorListener<IToken>();
+            var listener = new ErrorListener<IToken>(parser, lexer, tokens);
             parser.AddErrorListener(listener);
             var tree = parser.grammarSpec();
             if (listener.had_error)
@@ -23,8 +23,8 @@ namespace antlr
             else
             {
                 System.Console.WriteLine("parse completed.");
-                //System.Console.WriteLine(tokens.OutputTokens());
-                //System.Console.WriteLine(tree.OutputTree(tokens));
+                System.Console.WriteLine(tokens.OutputTokens());
+                System.Console.WriteLine(tree.OutputTree(tokens));
             }
         }
 }
